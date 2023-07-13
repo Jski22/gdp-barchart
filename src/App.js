@@ -1,17 +1,19 @@
 import './App.css';
 
 function App() {
-  const req = () => {
     fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
-      .then(response => {
-        return response.json()
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("test").innerHTML = JSON.stringify(data);
       })
-  };
+  
 
   return (
     <div className="App">
-      <header className="App-header">
-      </header>
+      <body>
+        <div id="test">
+        </div>
+      </body>
     </div>
   );
 }
