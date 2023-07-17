@@ -7,14 +7,11 @@ function App() {
       .then(data => {
         document.getElementById("test").innerHTML = JSON.stringify(data);
       })
-  
-    d3.select('body')
-      .append('h1')
-      .text('Test Title');
 
   return (
     <div className="App">
       <body>
+        <h1>United States GDP</h1>
         <div id="test">
         </div>
       </body>
