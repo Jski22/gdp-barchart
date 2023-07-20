@@ -2,10 +2,14 @@ import './App.css';
 import * as d3 from 'd3';
 
 function App() {
-    const req = fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
+    let arr = [];
+
+    fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
       .then(response => response.json())
-      .then(data => {console.log(data.data)}
-        );
+      .then(data => JSON.stringify(data))
+      .then(d => arr.push(d))
+
+    console.log(arr);
 
   return (
     <div className="App">
