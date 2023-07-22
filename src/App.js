@@ -6,10 +6,9 @@ function App() {
 
     fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
       .then(response => response.json())
-      .then(data => JSON.stringify(data))
-      .then(d => arr.push(d))
+      .then(data => arr.push(data.data));
 
-    console.log(arr);
+    console.log();
 
   return (
     <div className="App">
