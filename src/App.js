@@ -2,20 +2,22 @@ import './App.css';
 import * as d3 from 'd3';
 
 function App() {
-    let arr = [];
-
     const req = fetch("https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json")
       .then(response => response.json())
       .then(data => {return data.data});
 
+   
+
     const pushData = async () => {
+      let arr = [];
       const d = await req.then(data => {arr.push(data)});
       console.log(d);
+      console.log(arr[0][1]);
     }
 
     pushData();
 
-    console.log(arr[0]);
+    
 
   return (
     <div className="App">
