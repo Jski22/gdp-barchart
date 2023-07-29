@@ -5,6 +5,7 @@ function App() {
   let request = new XMLHttpRequest();
     request.open("GET", "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json");
     request.send();
+    request.onload = () => {}
      
   return (
     <div className="App">
