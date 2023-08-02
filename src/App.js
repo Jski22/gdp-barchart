@@ -1,16 +1,37 @@
 import './App.css';
+import React, { useEffect, useState } from "react"
 import * as d3 from 'd3';
 
-function App() {
-  let arr = [];
+const App = () => {
+  const [data, setData] = useState([])
 
-  let request = new XMLHttpRequest();
-    request.open("GET", "https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json");
-    request.send();
-    request.onload = () => {
-      const json = JSON.parse(request.responseText);
-      arr.push(json.data);
-    }
+  const fetchData = () => {
+    fetch('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
+      .then(response => {
+        return response.json()
+      })
+      .then(data => {
+        setData(data.data)
+      })
+  }
+
+  useEffect(() => {
+    fetchData()
+  }, [])
+
+  console.log(data[0])
+
+  /*let jsondata;    
+  .then(
+        function(u){ return u.json();}
+      ).then(
+        function(json){
+          jsondata = json;
+        }
+      )
+
+  console.log(jsondata)*/
+
      
   return (
     <div className="App">
