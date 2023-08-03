@@ -1,5 +1,5 @@
 import './App.css';
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from "react";
 import * as d3 from 'd3';
 
 const App = () => {
@@ -19,24 +19,16 @@ const App = () => {
     fetchData()
   }, [])
 
-  console.log(data[0])
+  const testElement = d3.select('body')
+                        .append('h2')
+                        .text('United States GDP');
 
-  /*let jsondata;    
-  .then(
-        function(u){ return u.json();}
-      ).then(
-        function(json){
-          jsondata = json;
-        }
-      )
-
-  console.log(jsondata)*/
-
+  
      
   return (
     <div className="App">
       <body>
-        <h1>United States GDP</h1>
+        {testElement}
         <div id="test">
         </div>
       </body>
