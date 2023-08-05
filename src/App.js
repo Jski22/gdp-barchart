@@ -1,9 +1,9 @@
 import './App.css';
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import * as d3 from 'd3';
 
 const App = () => {
-  const [data, setData] = useState([])
+  const [data, setData] = useState([]);
 
   const fetchData = () => {
     fetch('https://raw.githubusercontent.com/freeCodeCamp/ProjectReferenceData/master/GDP-data.json')
@@ -19,19 +19,18 @@ const App = () => {
     fetchData()
   }, [])
 
-  const testElement = d3.select('body')
-                        .append('h2')
-                        .text('United States GDP');
+  const svgRef = useRef();
 
-  
+  useEffect(() => {
+    d3.select('body')
+    .append('h2')
+    .text('United States GDP');
+  }, []);
      
   return (
     <div className="App">
-      <body>
-        {testElement}
         <div id="test">
         </div>
-      </body>
     </div>
   );
 }
