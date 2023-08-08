@@ -22,9 +22,11 @@ const App = () => {
   const svgRef = useRef();
 
   useEffect(() => {
-    d3.select('body')
-    .append('h2')
-    .text('United States GDP');
+    const svgTest = d3.select(svgRef.current);
+
+    svgTest.selectAll("div")
+           .append("h2")
+           .text("United States GDP");
   }, []);
      
   return (
