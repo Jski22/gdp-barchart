@@ -24,7 +24,7 @@ const App = () => {
   useEffect(() => {
     const svgTest = d3.select(svgRef.current);
 
-    svgTest.selectAll("div")
+    svgTest.select(".App")
            .append("h2")
            .text("United States GDP");
   }, []);
