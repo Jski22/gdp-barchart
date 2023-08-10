@@ -22,15 +22,14 @@ const App = () => {
   const svgRef = useRef();
 
   useEffect(() => {
-    const svgTest = d3.select(svgRef.current);
 
-    svgTest.select(".App")
-           .append("h2")
-           .text("United States GDP");
+    d3.select(svgRef.current)
+      .append("h2")
+      .text("United States GDP")
   }, []);
      
   return (
-    <div className="App">
+    <div ref={svgRef} className="App">
         <div id="test">
         </div>
     </div>
