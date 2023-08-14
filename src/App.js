@@ -31,8 +31,6 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
-        <div id="test">
-        </div>
     </div>
   );
 }
