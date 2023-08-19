@@ -23,9 +23,14 @@ const App = () => {
 
   useEffect(() => {
 
-    d3.select(svgRef.current)
+    const minX = d3.min(data, (d) => d[1]);
+    const maxX = d3.max(data, (d) => d[1]);
+                   
+    console.log(minX, maxX)
     
-  }, []);
+  }, [data]); 
+
+  //console.log(data[0][1])
      
   return (
     <div ref={svgRef} className="App">
