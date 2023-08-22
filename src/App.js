@@ -25,8 +25,11 @@ const App = () => {
 
     const minX = d3.min(data, (d) => d[1]);
     const maxX = d3.max(data, (d) => d[1]);
+
+    const scale = d3.scaleLinear()
+                    .domain([minX, maxX])
                    
-    console.log(minX, maxX)
+    console.log(scale)
     
   }, [data]); 
 
