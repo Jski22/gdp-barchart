@@ -3,7 +3,7 @@
 }
 
 body {
-  background-color: #282c34;
+  background-color: #192d55;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,4 +11,10 @@ body {
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+}
+
+svg {
+  background-color: aliceblue;
+  width: 500;
+  height: 100;
 }

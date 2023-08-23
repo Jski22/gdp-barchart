@@ -22,7 +22,7 @@ const App = () => {
   const svgRef = useRef();
 
   useEffect(() => {
-    const minX = d3.min(data, (d) => parseInt(d[0]));
+    /*const minX = d3.min(data, (d) => parseInt(d[0]));
     const maxX = d3.max(data, (d) => parseInt(d[0]));
 
     const minY = d3.min(data, (d) => d[1]);
@@ -30,9 +30,11 @@ const App = () => {
 
     const scale = d3.scaleLinear()
                     .domain([minY, maxY])
-                    .range([20, 200])
-                   
-    console.log(scale(50), minX, maxX)
+                    .range([20, 200]) */
+                  
+
+    const svg = d3.select(svgRef.current)
+                  .append("svg")
     
   }, [data]); 
 
