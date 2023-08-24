@@ -35,6 +35,15 @@ const App = () => {
 
     const svg = d3.select(svgRef.current)
                   .append("svg")
+
+      svg.selectAll("rect")
+         .data(data, (d) => d[1])
+         .enter()
+         .append("rect")
+         .attr("x", 0)
+         .attr("y", 0)
+         .attr("width", 25)
+         .attr("height", 100)
     
   }, [data]); 
 
