@@ -33,8 +33,7 @@ const App = () => {
                     .range([20, 200]) */
                   
 
-    const svg = d3.select(svgRef.current)
-                  .append("svg")
+    const svg = d3.select(".chart-svg")
 
       svg.selectAll("rect")
          .data(data, (d) => d[1])
@@ -50,6 +49,7 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
+      <svg className="chart-svg" />
     </div>
   );
 }
