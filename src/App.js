@@ -35,14 +35,16 @@ const App = () => {
 
     const svg = d3.select(".chart-svg")
 
+    const h = 700;
+
       svg.selectAll("rect")
-         .data(data, (d) => d[1])
+         .data(data)
          .enter()
          .append("rect")
-         .attr("x", 0)
-         .attr("y", 0)
+         .attr("x", (d, i) => i * 30)
+         .attr("y", (d, i) => h - d[1])
          .attr("width", 25)
-         .attr("height", 100)
+         .attr("height", (d) => d[1])
     
   }, [data]); 
 
