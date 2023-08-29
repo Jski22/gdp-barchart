@@ -20,30 +20,36 @@ const App = () => {
   }, [])
 
   const svgRef = useRef();
+  const w = 1200;
 
   useEffect(() => {
-    /*const minX = d3.min(data, (d) => parseInt(d[0]));
-    const maxX = d3.max(data, (d) => parseInt(d[0]));
+    const h = 500;
+    const p = 15;
+
+    //const minX = d3.min(data, (d) => parseInt(d[0]));
+    const maxX = d3.count(data, (d) => d[1]);
 
     const minY = d3.min(data, (d) => d[1]);
     const maxY = d3.max(data, (d) => d[1]);
 
-    const scale = d3.scaleLinear()
+    const xScale = d3.scaleLinear()
+                    .domain([0, maxX])
+                    .range([p, w - p]);
+
+    const yScale = d3.scaleLinear()
                     .domain([minY, maxY])
-                    .range([20, 200]) */
+                    .range([h - p, p])
                   
 
     const svg = d3.select(".chart-svg")
-
-    const h = 700;
 
       svg.selectAll("rect")
          .data(data)
          .enter()
          .append("rect")
-         .attr("x", (d, i) => i * 30)
-         .attr("y", (d, i) => h - d[1])
-         .attr("width", 25)
+         .attr("x", (d, i) => xScale(i))
+         .attr("y", (d) => yScale(d[1]))
+         .attr("width", 3)
          .attr("height", (d) => d[1])
     
   }, [data]); 
@@ -51,7 +57,7 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
-      <svg className="chart-svg" />
+      <svg className="chart-svg" width={w} />
     </div>
   );
 }
