@@ -20,10 +20,10 @@ const App = () => {
   }, [])
 
   const svgRef = useRef();
-  const w = 1200;
 
   useEffect(() => {
-    const h = 500;
+    const w = 1200;
+    const h = 450;
     const p = 15;
 
     //const minX = d3.min(data, (d) => parseInt(d[0]));
@@ -32,15 +32,13 @@ const App = () => {
     const minY = d3.min(data, (d) => d[1]);
     const maxY = d3.max(data, (d) => d[1]);
 
-    console.log(maxY)
-
     const xScale = d3.scaleLinear()
                     .domain([0, maxX])
-                    .range([p, w - p]);
+                    .range([40, w - p]);
 
     const yScale = d3.scaleLinear()
-                    .domain([minY, maxY])
-                    .range([h - p, p]);
+                    .domain([0, maxY])
+                    .range([h, 0]);
                   
     const svg = d3.select(".chart-svg");
 
@@ -51,13 +49,12 @@ const App = () => {
          .attr("x", (d, i) => xScale(i))
          .attr("y", (d) => yScale(d[1]))
          .attr("width", 3)
-         .attr("height", (d) => d[1]);
+         .attr("height", (d) => yScale(maxY - d[1]));
 
     const yAxis = d3.axisLeft(yScale);
 
       svg.append("g")
-         .attr("transform", "translate(" + 20 + ",0)")
-         .style("padding-left", "20px")
+         .attr("transform", "translate(" + 40 + ",0)")
          .call(yAxis);
     
   }, [data]); 
@@ -65,7 +62,7 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
-      <svg className="chart-svg" width={w} />
+      <svg className="chart-svg" width="1200px" />
     </div>
   );
 }
