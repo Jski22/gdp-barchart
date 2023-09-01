@@ -27,9 +27,9 @@ const App = () => {
     const p = 15;
 
     //const minX = d3.min(data, (d) => parseInt(d[0]));
-    const maxX = d3.count(data, (d) => d[1]);
+    const maxX = d3.count(data, (d) => parseInt(d[0]));
 
-    const minY = d3.min(data, (d) => d[1]);
+    //const minY = d3.min(data, (d) => d[1]);
     const maxY = d3.max(data, (d) => d[1]);
 
     const xScale = d3.scaleLinear()
@@ -38,7 +38,7 @@ const App = () => {
 
     const yScale = d3.scaleLinear()
                     .domain([0, maxY])
-                    .range([h, 0]);
+                    .range([h, p]);
                   
     const svg = d3.select(".chart-svg");
 
@@ -49,13 +49,18 @@ const App = () => {
          .attr("x", (d, i) => xScale(i))
          .attr("y", (d) => yScale(d[1]))
          .attr("width", 3)
-         .attr("height", (d) => yScale(maxY - d[1]));
+         .attr("height", (d) => yScale(maxY - d[1]) - p);
 
     const yAxis = d3.axisLeft(yScale);
+    const xAxis = d3.axisBottom(xScale);
 
       svg.append("g")
          .attr("transform", "translate(" + 40 + ",0)")
          .call(yAxis);
+
+      svg.append("g")
+         .attr("transform", "translate(0," + h + ")")
+         .call(xAxis);
     
   }, [data]); 
 
