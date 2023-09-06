@@ -26,6 +26,19 @@ const App = () => {
     const h = 450;
     const p = 15;
 
+    let parseDate = d3.timeParse("%Y-%m-%d");
+    let dates = [];
+    for (let d of data) {
+      dates.push(parseDate(d[0]));
+    }
+
+    let domain = d3.extent(dates);
+
+    console.log(domain);
+
+    const testX = d3.min(data, (d) => parseDate(d[0]));
+    console.log(testX)
+
     //const minX = d3.min(data, (d) => parseInt(d[0]));
     const maxX = d3.count(data, (d) => parseInt(d[0]));
 
