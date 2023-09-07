@@ -45,8 +45,8 @@ const App = () => {
     //const minY = d3.min(data, (d) => d[1]);
     const maxY = d3.max(data, (d) => d[1]);
 
-    const xScale = d3.scaleLinear()
-                    .domain([0, maxX])
+    const xScale = d3.scaleTime()
+                    .domain(domain)
                     .range([40, w - p]);
 
     const yScale = d3.scaleLinear()
@@ -59,7 +59,7 @@ const App = () => {
          .data(data)
          .enter()
          .append("rect")
-         .attr("x", (d, i) => xScale(i))
+         .attr("x", (d) => xScale(parseDate(d[0])))
          .attr("y", (d) => yScale(d[1]))
          .attr("width", 3)
          .attr("height", (d) => yScale(maxY - d[1]) - p);
@@ -68,7 +68,7 @@ const App = () => {
     const xAxis = d3.axisBottom(xScale);
 
       svg.append("g")
-         .attr("transform", "translate(" + 40 + ",0)")
+         .attr("transform", "translate(40,0)")
          .call(yAxis);
 
       svg.append("g")
