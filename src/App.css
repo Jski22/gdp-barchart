@@ -13,6 +13,10 @@ body {
   color: rgb(0, 0, 0);
 }
 
+h1 {
+  color: white;
+}
+
 svg {
   background-color: aliceblue;
   height: 500px;

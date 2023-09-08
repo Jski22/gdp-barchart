@@ -80,6 +80,7 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
+      <h1>US GDP</h1>
       <svg className="chart-svg" width="1200px" />
     </div>
   );
