@@ -59,7 +59,8 @@ const App = () => {
          .attr("x", (d) => xScale(parseDate(d[0])))
          .attr("y", (d) => yScale(d[1]))
          .attr("width", 3)
-         .attr("height", (d) => yScale(maxY - d[1]) - p);
+         .attr("height", (d) => yScale(maxY - d[1]) - p)
+         .attr("class", "bar");
 
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
@@ -77,8 +78,10 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
-      <h1>US GDP</h1>
-      <svg className="chart-svg" width="1200px" />
+     
+      <svg className="chart-svg" width="1200px">
+         <h1>US GDP</h1>
+      </svg>
     </div>
   );
 }

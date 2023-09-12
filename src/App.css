@@ -14,10 +14,16 @@ body {
 }
 
 h1 {
-  color: white;
+  fill: black;
+  z-index: 5;
 }
 
 svg {
   background-color: aliceblue;
   height: 500px;
+  z-index: 2;
+}
+
+.bar:hover {
+  fill: rgb(0, 207, 7);
 }
