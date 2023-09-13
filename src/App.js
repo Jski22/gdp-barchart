@@ -60,7 +60,9 @@ const App = () => {
          .attr("y", (d) => yScale(d[1]))
          .attr("width", 3)
          .attr("height", (d) => yScale(maxY - d[1]) - p)
-         .attr("class", "bar");
+         .attr("class", "bar")
+         .append("title")
+         .text("test")
 
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
