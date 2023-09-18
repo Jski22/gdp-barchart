@@ -64,9 +64,7 @@ const App = () => {
          .append("title")
          .text((d) => d[1])
          
-         
-         
-
+    
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
 
