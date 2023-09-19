@@ -34,8 +34,6 @@ const App = () => {
 
     let domain = d3.extent(dates);
 
-    const testX = d3.min(data, (d) => parseDate(d[0]));
-
     //const minX = d3.min(data, (d) => parseInt(d[0]));
     const maxX = d3.count(data, (d) => parseInt(d[0]));
 
