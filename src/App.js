@@ -60,7 +60,7 @@ const App = () => {
          .attr("height", (d) => yScale(maxY - d[1]) - p)
          .attr("class", "bar")
          .append("title")
-         .text((d) => d[1])
+         .text((d) => parseDate(d[0]))
          
     
     const yAxis = d3.axisLeft(yScale);
