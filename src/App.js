@@ -72,10 +72,18 @@ const App = () => {
          .attr("transform", "translate(40,0)")
          .call(yAxis);
 
+      svg.append("text")
+         .attr("transform", "rotate(-90 100 100)")
+         .attr("x", 35)
+         .attr("y", 75)
+         .attr("dy", "lem")
+         .style("text-anchor", "middle")
+         .text("Gross Domestic Product")
+
       svg.append("g")
          .attr("transform", "translate(0," + h + ")")
          .call(xAxis);
-    
+      
   }, [data]); 
 
      
