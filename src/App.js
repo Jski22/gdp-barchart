@@ -76,8 +76,8 @@ const App = () => {
          .attr("transform", "rotate(-90 100 100)")
          .attr("x", 35)
          .attr("y", 75)
-         .attr("dy", "lem")
          .style("text-anchor", "middle")
+         .style("font-size", "1rem")
          .text("Gross Domestic Product")
 
       svg.append("g")
