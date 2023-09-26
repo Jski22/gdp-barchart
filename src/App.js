@@ -49,6 +49,11 @@ const App = () => {
                   
     const svg = d3.select(".chart-svg");
 
+      svg.append("text")
+         .attr("x", 500)
+         .attr("y", 60)
+         .text("United States GDP");
+
       svg.selectAll("rect")
          .data(data)
          .enter()
