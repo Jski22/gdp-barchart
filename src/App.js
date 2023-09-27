@@ -50,8 +50,10 @@ const App = () => {
     const svg = d3.select(".chart-svg");
 
       svg.append("text")
-         .attr("x", 500)
+         .attr("x", 460)
          .attr("y", 60)
+         .style("font-size", "2rem")
+         .style("font-family", "Courier")
          .text("United States GDP");
 
       svg.selectAll("rect")
