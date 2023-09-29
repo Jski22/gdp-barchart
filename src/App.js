@@ -52,7 +52,7 @@ const App = () => {
       svg.append("text")
          .attr("x", 460)
          .attr("y", 60)
-         .style("font-size", "2rem")
+         .style("font-size", "3rem")
          .style("font-family", "Courier")
          .text("United States GDP");
 
