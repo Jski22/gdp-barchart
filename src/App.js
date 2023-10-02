@@ -50,7 +50,7 @@ const App = () => {
     const svg = d3.select(".chart-svg");
 
       svg.append("text")
-         .attr("x", 415)
+         .attr("x", 405)
          .attr("y", 60)
          .style("font-size", "2.5rem")
          .style("font-family", "Courier")
