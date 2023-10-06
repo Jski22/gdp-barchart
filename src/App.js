@@ -27,6 +27,7 @@ const App = () => {
     const p = 15;
 
     let parseDate = d3.timeParse("%Y-%m-%d");
+    let formatDate = d3.timeFormat("%B %Y");
     let dates = [];
     for (let d of data) {
       dates.push(parseDate(d[0]));
@@ -68,7 +69,7 @@ const App = () => {
          .attr("height", (d) => yScale(maxY - d[1]) - p)
          .attr("class", "bar")
          .append("title")
-         .text((d) => parseDate(d[0]))
+         .text((d) => formatDate(parseDate(d[0])));
          
     
     const yAxis = d3.axisLeft(yScale);
