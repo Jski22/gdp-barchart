@@ -37,7 +37,6 @@ const App = () => {
 
     const maxX = d3.count(data, (d) => parseInt(d[0]));
 
-    //const minY = d3.min(data, (d) => d[1]);
     const maxY = d3.max(data, (d) => d[1]);
 
     const xScale = d3.scaleTime()
