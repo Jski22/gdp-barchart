@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/gdp-barchart/static/css/main.fc73c0b8.css",
+    "main.js": "/gdp-barchart/static/js/main.13e10cd1.js",
+    "static/js/787.e0607ed6.chunk.js": "/gdp-barchart/static/js/787.e0607ed6.chunk.js",
+    "index.html": "/gdp-barchart/index.html",
+    "main.fc73c0b8.css.map": "/gdp-barchart/static/css/main.fc73c0b8.css.map",
+    "main.13e10cd1.js.map": "/gdp-barchart/static/js/main.13e10cd1.js.map",
+    "787.e0607ed6.chunk.js.map": "/gdp-barchart/static/js/787.e0607ed6.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fc73c0b8.css",
+    "static/js/main.13e10cd1.js"
+  ]
+}
