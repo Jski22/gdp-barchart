@@ -76,6 +76,7 @@ const App = () => {
     const xAxis = d3.axisBottom(xScale);
 
       svg.append("g")
+         .attr("id", "y-axis")
          .attr("transform", "translate(40,0)")
          .call(yAxis);
 
@@ -88,6 +89,7 @@ const App = () => {
          .text("Gross Domestic Product")
 
       svg.append("g")
+         .attr("id", "x-axis")
          .attr("transform", "translate(0," + h + ")")
          .call(xAxis);
       
