@@ -69,6 +69,8 @@ const App = () => {
          .attr("height", (d) => yScale(maxY - d[1]) - p)
          .attr("class", "bar")
          .append("title")
+         .attr("id", "tooltip")
+         .attr("data-date", (d) => parseDate(d[0]))
          .text((d) => formatDate(parseDate(d[0])));
          
     
