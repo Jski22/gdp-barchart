@@ -27,7 +27,8 @@ const App = () => {
     const p = 15;
 
     let parseDate = d3.timeParse("%Y-%m-%d");
-    let formatDate = d3.timeFormat("%B %Y");
+    let displayDate = d3.timeFormat("%B %Y");
+    let formatDate = d3.timeFormat("%Y-%m-%d");
     let dates = [];
     for (let d of data) {
       dates.push(parseDate(d[0]));
@@ -60,7 +61,7 @@ const App = () => {
          .enter()
          .append("rect")
          .attr("x", (d) => xScale(parseDate(d[0])))
-         .attr("data-date", (d) => parseDate(d[0]))
+         .attr("data-date", (d) => formatDate(parseDate(d[0])))
          .attr("y", (d) => yScale(d[1]))
          .attr("data-gdp", (d) => d[1])
          .attr("width", 3)
@@ -69,7 +70,7 @@ const App = () => {
          .append("title")
          .attr("id", "tooltip")
          .attr("data-date", (d) => parseDate(d[0]))
-         .text((d) => formatDate(parseDate(d[0])));
+         .text((d) => displayDate(parseDate(d[0])));
          
     
     const yAxis = d3.axisLeft(yScale);
