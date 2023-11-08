@@ -69,7 +69,7 @@ const App = () => {
          .attr("class", "bar")
          .append("title")
          .attr("id", "tooltip")
-         .attr("data-date", (d) => parseDate(d[0]))
+         .attr("data-date", (d) => formatDate(parseDate(d[0])))
          .text((d) => displayDate(parseDate(d[0])));
          
     
