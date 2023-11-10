@@ -16,7 +16,6 @@ body {
 svg {
   background-color: aliceblue;
   height: 500px;
-  z-index: 2;
 }
 
 .bar:hover {
