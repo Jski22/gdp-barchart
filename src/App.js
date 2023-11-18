@@ -93,6 +93,10 @@ const App = () => {
          .attr("id", "x-axis")
          .attr("transform", "translate(0," + h + ")")
          .call(xAxis);
+
+      svg.append("div")
+         .attr("class", "tooltip")
+         .attr("class", "tooltip")
       
   }, [data]); 
 
