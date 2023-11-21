@@ -97,6 +97,7 @@ const App = () => {
       svg.append("div")
          .attr("class", "tooltip")
          .attr("class", "tooltip")
+         .style("opacity", 0);
       
   }, [data]); 
 
