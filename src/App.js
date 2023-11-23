@@ -94,9 +94,11 @@ const App = () => {
          .attr("transform", "translate(0," + h + ")")
          .call(xAxis);
 
-      svg.append("div")
+    let tooltip = d3
+         .select("svg")
+         .append("div")
          .attr("class", "tooltip")
-         .attr("class", "tooltip")
+         .attr("id", "tooltip")
          .style("opacity", 0);
       
   }, [data]); 
