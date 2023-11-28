@@ -67,11 +67,6 @@ const App = () => {
          .attr("width", 3)
          .attr("height", (d) => yScale(maxY - d[1]) - p)
          .attr("class", "bar")
-         .append("title")
-         .attr("id", "tooltip")
-         .attr("data-date", (d) => formatDate(parseDate(d[0])))
-         .text((d) => displayDate(parseDate(d[0])));
-         
     
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
