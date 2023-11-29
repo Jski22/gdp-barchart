@@ -56,12 +56,11 @@ const App = () => {
          .style("font-family", "Courier")
          .text("United States GDP");
 
-    let tooltip = d3
-      .select("svg")
-      .append("div")
-      .attr("class", "tooltip")
-      .attr("id", "tooltip")
-      .style("opacity", 0);
+    let tooltip = svg
+        .append("text")
+        .attr("class", "tooltip")
+        .attr("id", "tooltip")
+        .style("opacity", 0);
 
       svg.selectAll("rect")
          .data(data)
@@ -74,11 +73,16 @@ const App = () => {
          .attr("width", 3)
          .attr("height", (d) => yScale(maxY - d[1]) - p)
          .attr("class", "bar")
-         .on("mouseover", function(d) {
+         .on("mouseover", function(event, d) {
+            const[x, y] = d3.pointer(event);
             tooltip
              .transition()
              .duration(200)
              .style("opacity", 0.9);
+            tooltip
+             .html("testTest: " + d)
+             .style("left", (x) + 20 + "px")
+             .style("top", (y) + 20 + "px");
           })
     
     const yAxis = d3.axisLeft(yScale);
