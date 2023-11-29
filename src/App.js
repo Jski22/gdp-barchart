@@ -56,6 +56,13 @@ const App = () => {
          .style("font-family", "Courier")
          .text("United States GDP");
 
+    let tooltip = d3
+      .select("svg")
+      .append("div")
+      .attr("class", "tooltip")
+      .attr("id", "tooltip")
+      .style("opacity", 0);
+
       svg.selectAll("rect")
          .data(data)
          .enter()
@@ -67,6 +74,12 @@ const App = () => {
          .attr("width", 3)
          .attr("height", (d) => yScale(maxY - d[1]) - p)
          .attr("class", "bar")
+         .on("mouseover", function(d) {
+            tooltip
+             .transition()
+             .duration(200)
+             .style("opacity", 0.9);
+          })
     
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
@@ -88,13 +101,6 @@ const App = () => {
          .attr("id", "x-axis")
          .attr("transform", "translate(0," + h + ")")
          .call(xAxis);
-
-    let tooltip = d3
-         .select("svg")
-         .append("div")
-         .attr("class", "tooltip")
-         .attr("id", "tooltip")
-         .style("opacity", 0);
       
   }, [data]); 
 
