@@ -14,9 +14,10 @@ svg {
 .tooltip {
   position: absolute;
   text-align: center;
-  width: 60px;
+  width: 70px;
+  padding: 2px;
   height: auto;
-  background: rgb(0, 0, 0);
+  background: rgb(255, 255, 255);
   pointer-events: none;
 }
 

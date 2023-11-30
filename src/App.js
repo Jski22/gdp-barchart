@@ -56,11 +56,14 @@ const App = () => {
          .style("font-family", "Courier")
          .text("United States GDP");
 
-    let tooltip = svg
+    /*let tooltip = svg
         .append("text")
         .attr("class", "tooltip")
         .attr("id", "tooltip")
-        .style("opacity", 0);
+        .style("opacity", 0)
+        .style("color", "black"); */
+
+      let tooltip = d3.select(".tooltip");
 
       svg.selectAll("rect")
          .data(data)
@@ -81,8 +84,8 @@ const App = () => {
              .style("opacity", 0.9);
             tooltip
              .html("testTest: " + d)
-             .style("left", (x) + 20 + "px")
-             .style("top", (y) + 20 + "px");
+             .style("left", (x) + 50 + "px")
+             .style("top", (y) - 40 + "px");
           })
     
     const yAxis = d3.axisLeft(yScale);
@@ -111,6 +114,7 @@ const App = () => {
      
   return (
     <div ref={svgRef} className="App">
+      <div className="tooltip" id="tooltip"></div>
       <svg className="chart-svg" width="1200px">
       </svg>
     </div>
