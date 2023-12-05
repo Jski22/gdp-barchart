@@ -83,7 +83,7 @@ const App = () => {
              .duration(200)
              .style("opacity", 0.9);
             tooltip
-             .html(displayDate(parseDate(d[0])) + " " + d[1])
+             .html(displayDate(parseDate(d[0])) + " " + "$" + d[1] + " B")
              .style("left", (x) + 50 + "px")
              .style("top", (y) - 40 + "px");
           })
