@@ -56,13 +56,6 @@ const App = () => {
          .style("font-family", "Courier")
          .text("United States GDP");
 
-    /*let tooltip = svg
-        .append("text")
-        .attr("class", "tooltip")
-        .attr("id", "tooltip")
-        .style("opacity", 0)
-        .style("color", "black"); */
-
       let tooltip = d3.select(".tooltip");
 
       svg.selectAll("rect")
