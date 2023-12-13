@@ -77,7 +77,7 @@ const App = () => {
              .style("opacity", 0.9);
             tooltip
              .html(displayDate(parseDate(d[0])) + " $" + d[1] + " B")
-             .style("left", (x) + 50 + "px")
+             .style("left", (x) + 45 + "px")
              .style("top", (y) - 40 + "px");
             tooltip.attr("data-date", d[0]);
           })
