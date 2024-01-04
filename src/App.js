@@ -81,7 +81,11 @@ const App = () => {
              .style("top", (y) - 40 + "px");
             tooltip.attr("data-date", d[0]);
           })
-          .on("mouseout", function(d) {});
+          .on("mouseout", function(d) {
+            tooltip
+              .transition()
+              .duration(400)
+          });
     
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
