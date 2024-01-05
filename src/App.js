@@ -85,6 +85,7 @@ const App = () => {
             tooltip
               .transition()
               .duration(400)
+              .style("opacity", 0);
           });
     
     const yAxis = d3.axisLeft(yScale);
