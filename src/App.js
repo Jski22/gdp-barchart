@@ -93,7 +93,7 @@ const App = () => {
 
       svg.append("g")
          .attr("id", "y-axis")
-         .attr("transform", "translate(40,0)")
+         .attr("transform", "translate(0,0)")
          .call(yAxis);
 
       svg.append("text")
