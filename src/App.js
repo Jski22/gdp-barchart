@@ -62,13 +62,13 @@ const App = () => {
          .data(data)
          .enter()
          .append("rect")
+         .attr("class", "bar")
          .attr("x", (d) => xScale(parseDate(d[0])))
          .attr("data-date", (d) => formatDate(parseDate(d[0])))
          .attr("y", (d) => yScale(d[1]))
          .attr("data-gdp", (d) => d[1])
          .attr("width", 3)
          .attr("height", (d) => yScale(maxY - d[1]) - p)
-         .attr("class", "bar")
          .on("mouseover", function(event, d) {
             const[x, y] = d3.pointer(event);
             tooltip
