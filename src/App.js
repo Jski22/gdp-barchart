@@ -44,7 +44,7 @@ const App = () => {
 
     const yScale = d3.scaleLinear()
                     .domain([0, maxY])
-                    .range([h, p]);
+                    .range([h, 0]);
                   
     const svg = d3.select(".chart-svg");
 
@@ -68,7 +68,7 @@ const App = () => {
          .attr("y", (d) => yScale(d[1]))
          .attr("data-gdp", (d) => d[1])
          .attr("width", 3)
-         .attr("height", (d) => yScale(maxY - d[1]) - p)
+         .attr("height", (d) => yScale(maxY - d[1]))
          .on("mouseover", function(event, d) {
             const[x, y] = d3.pointer(event);
             tooltip
@@ -106,7 +106,7 @@ const App = () => {
 
       svg.append("g")
          .attr("id", "x-axis")
-         .attr("transform", "translate(0," + maxY + p + ")")
+         .attr("transform", "translate(0," + h + ")")
          .call(xAxis);
       
   }, [data]); 
