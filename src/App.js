@@ -44,7 +44,7 @@ const App = () => {
 
     const yScale = d3.scaleLinear()
                     .domain([0, maxY])
-                    .range([h, 0]);
+                    .range([h, p]);
                   
     const svg = d3.select(".chart-svg");
 
