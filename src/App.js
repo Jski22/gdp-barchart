@@ -68,7 +68,7 @@ const App = () => {
          .attr("y", (d) => yScale(d[1]))
          .attr("data-gdp", (d) => d[1])
          .attr("width", 3)
-         .attr("height", (d) => yScale(maxY - d[1]))
+         .attr("height", (d) => yScale(maxY - d[1]) - p)
          .on("mouseover", function(event, d) {
             const[x, y] = d3.pointer(event);
             tooltip
