@@ -91,10 +91,10 @@ const App = () => {
     const yAxis = d3.axisLeft(yScale);
     const xAxis = d3.axisBottom(xScale);
 
-      svg.append("g")
+      /*svg.append("g")
          .attr("id", "y-axis")
          .attr("transform", "translate(40,0)")
-         .call(yAxis);
+         .call(yAxis);*/
 
       svg.append("text")
          .attr("transform", "rotate(-90 100 100)")
