@@ -34,11 +34,11 @@ const App = () => {
       dates.push(parseDate(d[0]));
     }
 
-    let domain = d3.extent(dates);
+    let domain = dates;
 
     const maxY = d3.max(data, (d) => d[1]);
 
-    const xScale = d3.scaleTime()
+    const xScale = d3.scaleBand()
                     .domain(domain)
                     .range([40, w - p]);
 
