@@ -106,7 +106,7 @@ const App = () => {
 
       svg.append("g")
          .attr("id", "x-axis")
-         .attr("transform", "translate(-8," + h + ")")
+         .attr("transform", "translate(-6," + h + ")")
          .call(xAxis);
       
   }, [data]); 
