@@ -104,10 +104,10 @@ const App = () => {
          .style("font-size", "1rem")
          .text("Gross Domestic Product")
 
-      svg.append("g")
+      /*svg.append("g")
          .attr("id", "x-axis")
          .attr("transform", "translate(-2," + h + ")")
-         .call(xAxis);
+         .call(xAxis);*/
       
   }, [data]); 
 
