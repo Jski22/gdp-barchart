@@ -116,7 +116,11 @@ const App = () => {
     <div ref={svgRef} className="App">
       <div className="tooltip" id="tooltip"></div>
       <svg className="chart-svg" width="1200px">
-        <g id="x-axis"></g>
+        <g id="x-axis">
+          <AxisBottom 
+            xScale={xScale}
+          />
+        </g>
       </svg>
     </div>
   );
