@@ -88,8 +88,8 @@ const App = () => {
               .style("opacity", 0);
           });
     
-    const yAxis = d3.axisLeft(yScale);
-    const xAxis = d3.axisBottom(xScale);
+    //const yAxis = d3.axisLeft(yScale);
+    //const xAxis = d3.axisBottom(xScale);
 
       /*svg.append("g")
          .attr("id", "y-axis")
