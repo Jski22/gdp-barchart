@@ -118,7 +118,7 @@ const App = () => {
       <svg className="chart-svg" width="1200px">
         <g id="x-axis">
           <axisBottom 
-            xScale={xScale}
+            xScale= <> {xScale} </>
           />
         </g>
       </svg>
