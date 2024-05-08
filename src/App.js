@@ -20,6 +20,7 @@ const App = () => {
   }, [])
 
   const svgRef = useRef();
+  const [value, setValue] = useState();
 
   useEffect(() => {
     const w = 1200;
@@ -38,9 +39,13 @@ const App = () => {
 
     const maxY = d3.max(data, (d) => d[1]);
 
-    const xScale = d3.scaleBand()
+    setValue(d3.scaleBand()
+      .domain(domain)
+      .range([40, w - p]))
+
+    /*const xScale = d3.scaleBand()
                     .domain(domain)
-                    .range([40, w - p]);
+                    .range([40, w - p]);*/
 
     const yScale = d3.scaleLinear()
                     .domain([0, maxY])
@@ -118,7 +123,7 @@ const App = () => {
       <svg className="chart-svg" width="1200px">
         <g id="x-axis">
           <axisBottom 
-            xScale={xScale}
+            xScale={value}
           />
         </g>
       </svg>
