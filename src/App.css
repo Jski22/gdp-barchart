@@ -11,6 +11,12 @@ svg {
   height: 500px;
 }
 
+axisBottom {
+  color: black;
+  position: absolute;
+  justify-content: center;
+}
+
 .tooltip {
   position: absolute;
   text-align: center;
