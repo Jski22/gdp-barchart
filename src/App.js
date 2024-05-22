@@ -121,7 +121,7 @@ const App = () => {
     <div ref={svgRef} className="App">
       <div className="tooltip" id="tooltip"></div>
       <svg className="chart-svg" width="1200px">
-        <g id="x-axis">
+        <g id="x-axis" transform="translate(40, 0)">
           <axisBottom 
             xScale={value}
           />
