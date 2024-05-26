@@ -11,10 +11,8 @@ svg {
   height: 500px;
 }
 
-.x-axis {
-  background-color: black;
-  position: absolute;
-  align-items: center;
+#x-axis {
+  color: black;
 }
 
 .tooltip {
