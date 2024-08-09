@@ -43,7 +43,7 @@ const App = () => {
       .domain(domain)
       .range([40, w - p]))
 
-    const xScale = d3.scaleBand()
+    const xScale = d3.scaleTime()
                     .domain(domain)
                     .range([40, w - p]);
 
