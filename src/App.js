@@ -35,7 +35,7 @@ const App = () => {
       dates.push(parseDate(d[0]));
     }
 
-    let domain = dates.max;
+    let domain = dates;
 
     const maxY = d3.max(data, (d) => d[1]);
 
