@@ -38,6 +38,7 @@ const App = () => {
     let domain = dates;
 
     const maxY = d3.max(data, (d) => d[1]);
+    const maxX = d3.count(data, (d) => parseInt(d[0]));
 
     setValue(d3.scaleBand()
       .domain(domain)
