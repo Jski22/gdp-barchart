@@ -45,7 +45,7 @@ const App = () => {
       .range([40, w - p]))
 
     const xScale = d3.scaleTime()
-                    .domain(domain)
+                    .domain(domain.max)
                     .range([40, w - p]);
 
     const yScale = d3.scaleLinear()
