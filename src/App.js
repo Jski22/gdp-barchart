@@ -124,7 +124,6 @@ const App = () => {
       <svg className="chart-svg" width="1200px">
         <g id="x-axis" transform="translate(0, 40)">
           <axisBottom  xScale={value} />
-          
         </g>
       </svg>
     </div>
