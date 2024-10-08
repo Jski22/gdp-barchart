@@ -123,7 +123,7 @@ const App = () => {
       <div className="tooltip" id="tooltip"></div>
       <svg className="chart-svg" width="1200px">
         <g id="x-axis" transform="translate(0, 40)">
-          <axisBottom  xScale={value} />
+          <axisBottom />
         </g>
       </svg>
     </div>
